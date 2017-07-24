@@ -5,10 +5,8 @@ layout: default
 {% include collection-banner.html %}
 {% include collection-nav.html %}
 
-<h1>{{ colTitle }} Home</h1>
-
-<p>{{ colDescription }}</p>
-
 {% assign items = site.data.collection_metadata.[colName] %}
 
-<p>Contains {{ items | size }} total items.</p>
+<p>The {{ colTitle }} contains {{ items | size }} total items.</p>
+
+<p>{{ colDescription }}</p>

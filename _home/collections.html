@@ -5,6 +5,6 @@ title: Collections
 <h2>Browse all Collections:</h2>
 <ul>
 {% for item in site.data.collections_info %}
-    <li><a href="{{ site.baseurl }}/{{ item.collection }}/">{{ item.title }}</a></li>
+    <li><a href="{{ site.baseurl }}/{{ item.collection }}/">{{ item.title }}</a>, subjects: {{ item.subjects | split: ";" | join: ", " }}</li>
 {% endfor %}
 </ul>

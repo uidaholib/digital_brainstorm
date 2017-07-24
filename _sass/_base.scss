@@ -1,1 +1,39 @@
-.active-tab { border: solid 1px black; }
+* { box-sizing: border-box; }
+html {
+  font-family: $base-font;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: $base-font;
+  font-size: $base-font-size;
+  font-weight: 400;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+
+  @media (max-width: 38rem){
+    font-size: $mobile-font-size;
+    font-weight: 300;
+    word-break: keep-all;
+  }
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  border-radius:5px;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+p { }
