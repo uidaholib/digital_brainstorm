@@ -1,16 +1,44 @@
 ---
 layout: default
+load: table
 ---
 {% include collection-variables.html %}
 {% include collection-banner.html %}
 {% include collection-nav.html %}
+{% assign items = site.data.collection_metadata.[colName] %}
 
 <h1>a table</h1>
 
-<p>with items:</p>
-{% assign items = site.data.collection_metadata.[colName] %}
-<ul>
-{% for item in items %}
-    <li>{{ item.title }}, {{ item.date }}. {{ item.description }}</li>
-{% endfor %}
-</ul>
+<table id="item-table"></table>
+
+<link rel="stylesheet" href="{{ site.baseurl }}/css/vanilla-dataTables.min.css" type="text/css">
+<script src="{{ site.baseurl }}/js/vanilla-dataTables.min.js"></script>
+<script>
+    var data = {
+        "headings": [
+            "Title",
+            "Date",
+            "Description"
+        ],
+        "rows": [
+            {% for item in items %}
+            [
+                "{{ item.title }}",
+                "{{ item.date }}",
+                "{{ item.description }}"
+            ]{% if forloop.last != true %},{% endif %}
+            {% endfor %}
+        ]
+    }
+    var datatable = new DataTable("#item-table", {
+	perPageSelect: [10, 20, 50, 100],
+	perPage: 20,
+	data: data,
+	labels: {
+		 placeholder: "Search collection...",
+		 perPage: "Show {select} items per page",
+		 noRows: "No matching items",
+		 info: "Showing {start} to {end} of {rows} items (Page {page} of {pages} pages)",
+	}	
+});
+</script>
