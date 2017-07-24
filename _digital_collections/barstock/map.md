@@ -3,7 +3,6 @@
 layout: collections/map
 # settings
 # center map:
-lat: 50
-long: 50
+lat: 47.474095
+long: -115.927939
 ---
-
