@@ -1,0 +1,21 @@
+# Jekyll GH-pages Digital Collection Generator
+
+# Site settings
+title: Digital Initiatives
+description: University of Idaho Digital Collections
+keywords: idaho, digital collections, history, photographs
+owner: University of Idaho Library
+email: dbecker@uidaho.edu
+
+# url variables
+baseurl: /digital_source
+dburl: http://digital.lib.uidaho.edu/cdm/search/collection/
+
+# jekyll collections settings
+collections:
+  home:
+    output: true
+    permalink: /:title/
+  digital_collections:
+    output: true
+    permalink: /:path/
