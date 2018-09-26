@@ -8,7 +8,7 @@ owner: University of Idaho Library
 email: dbecker@uidaho.edu
 
 # url variables
-baseurl: /digital_source
+baseurl: /digital_brainstorm
 dburl: http://digital.lib.uidaho.edu/cdm/search/collection/
 
 # jekyll collections settings
